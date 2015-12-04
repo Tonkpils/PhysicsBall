@@ -9,11 +9,31 @@
 import SpriteKit
 
 class GameScene: SKScene {
+
+    weak var plungerTouch : UITouch?
+
     override func didMoveToView(view: SKView) {
         self.setupScene()
     }
+
+    override func didSimulatePhysics() {
+        if let plungerTouch = self.plungerTouch {
+            let plunger = self.childNodeWithName("plunger") as! PlungerNode
+            plunger.translateToTouch(plungerTouch)
+        }
+    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let ball = childNodeWithName("pinball") as! PinballNode
+        let plunger = childNodeWithName("plunger") as! PlungerNode
+
+        if self.plungerTouch == nil && plunger.isInContactWithBall(ball) {
+            guard let touch = touches.first else {
+                return
+            }
+            self.plungerTouch = touch
+            plunger.grabWithTouch(touch)
+        }
 
     }
    
@@ -25,17 +45,14 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         physicsWorld.gravity = CGVector(dx: 0, dy: -3.8)
 
-        let ball = SKSpriteNode(imageNamed: "pinball.png")
+        let ball = PinballNode.ball()
+        ball.name = "pinball"
         ball.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-        ball.size = CGSize(width: 20, height: 20)
         addChild(ball)
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: 10)
 
-        let plunger = SKSpriteNode(imageNamed: "plunger.png")
+        let plunger = PlungerNode.plunger()
+        plunger.name = "plunger"
         plunger.position = CGPoint(x: self.size.width/2, y: self.size.height/2 - 140)
-        plunger.size = CGSize(width: 25, height: 100)
         addChild(plunger)
-        plunger.physicsBody = SKPhysicsBody(rectangleOfSize: plunger.size)
-        plunger.physicsBody?.dynamic = false
     }
 }
