@@ -23,6 +23,7 @@ class GameScene: SKScene {
 
     func setupScene() {
         backgroundColor = SKColor.whiteColor()
+        physicsWorld.gravity = CGVector(dx: 0, dy: -3.8)
 
         let ball = SKSpriteNode(imageNamed: "pinball.png")
         ball.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
