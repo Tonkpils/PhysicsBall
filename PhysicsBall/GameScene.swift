@@ -29,7 +29,13 @@ class GameScene: SKScene {
         ball.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         ball.size = CGSize(width: 20, height: 20)
         addChild(ball)
-
         ball.physicsBody = SKPhysicsBody(circleOfRadius: 10)
+
+        let plunger = SKSpriteNode(imageNamed: "plunger.png")
+        plunger.position = CGPoint(x: self.size.width/2, y: self.size.height/2 - 140)
+        plunger.size = CGSize(width: 25, height: 100)
+        addChild(plunger)
+        plunger.physicsBody = SKPhysicsBody(rectangleOfSize: plunger.size)
+        plunger.physicsBody?.dynamic = false
     }
 }
