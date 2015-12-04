@@ -14,6 +14,12 @@
 		B36C04D51C12092F00F4058D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36C04D31C12092F00F4058D /* Main.storyboard */; };
 		B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B36C04D61C12092F00F4058D /* Assets.xcassets */; };
 		B36C04DA1C12092F00F4058D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36C04D81C12092F00F4058D /* LaunchScreen.storyboard */; };
+		B36C04E71C12099500F4058D /* paddle-box.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E11C12099500F4058D /* paddle-box.png */; };
+		B36C04E81C12099500F4058D /* plunger.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E21C12099500F4058D /* plunger.png */; };
+		B36C04E91C12099500F4058D /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E31C12099500F4058D /* target.png */; };
+		B36C04EA1C12099500F4058D /* bumper.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E41C12099500F4058D /* bumper.png */; };
+		B36C04EB1C12099500F4058D /* pinball.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E51C12099500F4058D /* pinball.png */; };
+		B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E61C12099500F4058D /* paddle-anchor.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		B36C04D61C12092F00F4058D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B36C04D91C12092F00F4058D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B36C04DB1C12092F00F4058D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B36C04E11C12099500F4058D /* paddle-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-box.png"; sourceTree = "<group>"; };
+		B36C04E21C12099500F4058D /* plunger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plunger.png; sourceTree = "<group>"; };
+		B36C04E31C12099500F4058D /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		B36C04E41C12099500F4058D /* bumper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bumper.png; sourceTree = "<group>"; };
+		B36C04E51C12099500F4058D /* pinball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinball.png; sourceTree = "<group>"; };
+		B36C04E61C12099500F4058D /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,12 @@
 		B36C04CA1C12092F00F4058D /* PhysicsBall */ = {
 			isa = PBXGroup;
 			children = (
+				B36C04E11C12099500F4058D /* paddle-box.png */,
+				B36C04E21C12099500F4058D /* plunger.png */,
+				B36C04E31C12099500F4058D /* target.png */,
+				B36C04E41C12099500F4058D /* bumper.png */,
+				B36C04E51C12099500F4058D /* pinball.png */,
+				B36C04E61C12099500F4058D /* paddle-anchor.png */,
 				B36C04CB1C12092F00F4058D /* AppDelegate.swift */,
 				B36C04CD1C12092F00F4058D /* GameScene.sks */,
 				B36C04CF1C12092F00F4058D /* GameScene.swift */,
@@ -129,10 +147,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36C04EA1C12099500F4058D /* bumper.png in Resources */,
 				B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */,
 				B36C04DA1C12092F00F4058D /* LaunchScreen.storyboard in Resources */,
 				B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */,
+				B36C04E71C12099500F4058D /* paddle-box.png in Resources */,
+				B36C04EB1C12099500F4058D /* pinball.png in Resources */,
+				B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */,
 				B36C04D51C12092F00F4058D /* Main.storyboard in Resources */,
+				B36C04E91C12099500F4058D /* target.png in Resources */,
+				B36C04E81C12099500F4058D /* plunger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PhysicsBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leocorrea.tonkpils.PhysicsBall;
@@ -269,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PhysicsBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leocorrea.tonkpils.PhysicsBall;
