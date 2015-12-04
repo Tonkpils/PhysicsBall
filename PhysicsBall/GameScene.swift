@@ -32,9 +32,17 @@ class GameScene: SKScene {
                 return
             }
             self.plungerTouch = touch
-            plunger.grabWithTouch(touch)
+            plunger.grabWithTouch(touch, ball: ball, inWorld: self.physicsWorld)
         }
 
+    }
+
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let plungerTouch = self.plungerTouch
+            where touches.contains(plungerTouch) {
+                let plunger = self.childNodeWithName("plunger") as! PlungerNode
+                plunger.letGoAndLaunchBall(self.physicsWorld)
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {

@@ -11,6 +11,7 @@ import SpriteKit
 class PlungerNode: SKNode {
     var size : CGSize?
     var yTouchDelta : CGFloat?
+    var jointToBall : SKPhysicsJointFixed?
 
     class func plunger() -> PlungerNode {
         let plunger = PlungerNode()
@@ -47,15 +48,19 @@ class PlungerNode: SKNode {
         return contactedBodies.contains(ballBody)
     }
 
-    func grabWithTouch(touch : UITouch) {
+    func grabWithTouch(touch : UITouch, ball : PinballNode, inWorld world : SKPhysicsWorld) {
         let touchPoint = touch.locationInNode(self)
 
-        guard let stick = childNodeWithName("stick") else {
+        guard let stick = self.childNodeWithName("stick") else {
             // REVIEW
             return
         }
         
         self.yTouchDelta = stick.position.y - touchPoint.y
+        let jointPoint = self.convertPoint(stick.position, toNode: self.scene!)
+        self.jointToBall = SKPhysicsJointFixed.jointWithBodyA(stick.physicsBody!, bodyB: ball.physicsBody!, anchor: jointPoint)
+
+        world.addJoint(self.jointToBall!)
     }
     
     func translateToTouch(touch : UITouch) {
@@ -75,5 +80,27 @@ class PlungerNode: SKNode {
         }
 
         stick.position = CGPoint(x: 0, y: newY)
+    }
+
+    func letGoAndLaunchBall(world : SKPhysicsWorld) {
+        guard let stick = childNodeWithName("stick") else {
+            return
+        }
+
+        let returnY : CGFloat = 0
+        let distancePulled : CGFloat = returnY - stick.position.y
+        let forceToApply : CGFloat = max(4, distancePulled/2)
+
+        let move = SKAction.moveToY(returnY, duration: 0.2)
+        let launchBall = SKAction.runBlock { () -> Void in
+            if let jointToBall = self.jointToBall {
+                world.removeJoint(jointToBall)
+                let ballBody = jointToBall.bodyB
+                ballBody.applyImpulse(CGVector(dx: 0, dy: forceToApply))
+                self.jointToBall = nil
+            }
+        }
+        let all = SKAction.sequence([move, launchBall])
+        stick.runAction(all)
     }
 }
