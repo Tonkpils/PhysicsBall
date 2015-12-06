@@ -71,8 +71,10 @@ class PlungerNode: SKNode {
         // REVIEW: do I always have to force unwrap?
         var newY : CGFloat = point.y + self.yTouchDelta!
         let plungerHeight : CGFloat = self.size!.height
+
         let upperY : CGFloat = 0.0
-        let lowerY = upperY - plungerHeight + 30.0
+        let lowerY : CGFloat = upperY - plungerHeight + 30.0
+
         if newY > upperY {
             newY = upperY
         } else if newY < lowerY {
@@ -89,9 +91,9 @@ class PlungerNode: SKNode {
 
         let returnY : CGFloat = 0
         let distancePulled : CGFloat = returnY - stick.position.y
-        let forceToApply : CGFloat = max(4, distancePulled/2)
+        let forceToApply : CGFloat = max(4, distancePulled / 2)
 
-        let move = SKAction.moveToY(returnY, duration: 0.2)
+        let move = SKAction.moveToY(returnY, duration: 0.02)
         let launchBall = SKAction.runBlock { () -> Void in
             if let jointToBall = self.jointToBall {
                 world.removeJoint(jointToBall)

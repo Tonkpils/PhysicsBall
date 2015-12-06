@@ -22,6 +22,7 @@
 		B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = B36C04E61C12099500F4058D /* paddle-anchor.png */; };
 		B36C04EE1C120EF000F4058D /* PinballNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04ED1C120EF000F4058D /* PinballNode.swift */; };
 		B36C04F11C12102400F4058D /* PlungerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04F01C12102400F4058D /* PlungerNode.swift */; };
+		B36C04F51C13F34600F4058D /* TableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04F41C13F34600F4058D /* TableNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B36C04E61C12099500F4058D /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
 		B36C04ED1C120EF000F4058D /* PinballNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinballNode.swift; sourceTree = "<group>"; };
 		B36C04F01C12102400F4058D /* PlungerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlungerNode.swift; sourceTree = "<group>"; };
+		B36C04F41C13F34600F4058D /* TableNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				B36C04ED1C120EF000F4058D /* PinballNode.swift */,
 				B36C04F01C12102400F4058D /* PlungerNode.swift */,
+				B36C04F41C13F34600F4058D /* TableNode.swift */,
 				B36C04E11C12099500F4058D /* paddle-box.png */,
 				B36C04E21C12099500F4058D /* plunger.png */,
 				B36C04E31C12099500F4058D /* target.png */,
@@ -177,6 +180,7 @@
 				B36C04D01C12092F00F4058D /* GameScene.swift in Sources */,
 				B36C04D21C12092F00F4058D /* GameViewController.swift in Sources */,
 				B36C04EE1C120EF000F4058D /* PinballNode.swift in Sources */,
+				B36C04F51C13F34600F4058D /* TableNode.swift in Sources */,
 				B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +333,7 @@
 				B36C04E01C12092F00F4058D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
