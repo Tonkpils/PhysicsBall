@@ -54,4 +54,24 @@ class PaddleNode: SKNode {
         
         return paddle
     }
+
+    func createPinJointInWorld() {
+        guard let scene = self.scene else {
+            NSLog("can only create pin joint when in scene")
+            return
+        }
+
+        guard let bar = self.childNodeWithName("bar"),
+            anchor = self.childNodeWithName("anchor") else {
+                return
+        }
+
+        let positionInScene = self.convertPoint(anchor.position, toNode: scene)
+        let pin = SKPhysicsJointPin.jointWithBodyA(bar.physicsBody!, bodyB: anchor.physicsBody!, anchor: positionInScene)
+        pin.shouldEnableLimits = true
+        pin.lowerAngleLimit = -0.5
+        pin.upperAngleLimit = 0.5
+
+        scene.physicsWorld.addJoint(pin)
+    }
 }

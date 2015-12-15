@@ -83,10 +83,14 @@ class GameScene: SKScene {
         leftPaddle.position = CGPoint(x: 9, y: 100)
         table.addChild(leftPaddle)
 
+        leftPaddle.createPinJointInWorld()
+
         let rightPaddle = PaddleNode.paddleFor(.Right)
         rightPaddle.name = "rightPaddle"
         rightPaddle.position = CGPoint(x: plunger.position.x - plunger.size!.width - 1, y: 100)
         table.addChild(rightPaddle)
+
+        rightPaddle.createPinJointInWorld()
 
     }
 }
