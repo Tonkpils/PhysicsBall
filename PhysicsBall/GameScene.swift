@@ -77,5 +77,16 @@ class GameScene: SKScene {
         ball.name = "ball"
         ball.position = CGPoint(x: plunger.position.x, y: plunger.position.y + plunger.size!.height)
         table.addChild(ball)
+
+        let leftPaddle = PaddleNode.paddleFor(.Left)
+        leftPaddle.name = "leftPaddle"
+        leftPaddle.position = CGPoint(x: 9, y: 100)
+        table.addChild(leftPaddle)
+
+        let rightPaddle = PaddleNode.paddleFor(.Right)
+        rightPaddle.name = "rightPaddle"
+        rightPaddle.position = CGPoint(x: plunger.position.x - plunger.size!.width - 1, y: 100)
+        table.addChild(rightPaddle)
+
     }
 }
