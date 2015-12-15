@@ -112,5 +112,6 @@ class GameScene: SKScene {
 
         rightPaddle.createPinJointInWorld()
 
+        table.loadLayoutNamed("layout")
     }
 }

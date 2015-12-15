@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B332DBD21C208F0600DC9A13 /* PaddleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBD11C208F0600DC9A13 /* PaddleNode.swift */; };
+		B332DBD41C209D2400DC9A13 /* BumperNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBD31C209D2400DC9A13 /* BumperNode.swift */; };
+		B332DBD61C209DFA00DC9A13 /* TargetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBD51C209DFA00DC9A13 /* TargetNode.swift */; };
+		B332DBD81C20A54000DC9A13 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = B332DBD71C20A54000DC9A13 /* layout.plist */; };
 		B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CB1C12092F00F4058D /* AppDelegate.swift */; };
 		B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B36C04CD1C12092F00F4058D /* GameScene.sks */; };
 		B36C04D01C12092F00F4058D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CF1C12092F00F4058D /* GameScene.swift */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		B332DBD11C208F0600DC9A13 /* PaddleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddleNode.swift; sourceTree = "<group>"; };
+		B332DBD31C209D2400DC9A13 /* BumperNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BumperNode.swift; sourceTree = "<group>"; };
+		B332DBD51C209DFA00DC9A13 /* TargetNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetNode.swift; sourceTree = "<group>"; };
+		B332DBD71C20A54000DC9A13 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
 		B36C04C81C12092F00F4058D /* PhysicsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36C04CB1C12092F00F4058D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36C04CD1C12092F00F4058D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -78,10 +84,13 @@
 		B36C04CA1C12092F00F4058D /* PhysicsBall */ = {
 			isa = PBXGroup;
 			children = (
+				B332DBD31C209D2400DC9A13 /* BumperNode.swift */,
 				B332DBD11C208F0600DC9A13 /* PaddleNode.swift */,
 				B36C04ED1C120EF000F4058D /* PinballNode.swift */,
 				B36C04F01C12102400F4058D /* PlungerNode.swift */,
+				B332DBD71C20A54000DC9A13 /* layout.plist */,
 				B36C04F41C13F34600F4058D /* TableNode.swift */,
+				B332DBD51C209DFA00DC9A13 /* TargetNode.swift */,
 				B36C04E11C12099500F4058D /* paddle-box.png */,
 				B36C04E21C12099500F4058D /* plunger.png */,
 				B36C04E31C12099500F4058D /* target.png */,
@@ -165,6 +174,7 @@
 				B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */,
 				B36C04E71C12099500F4058D /* paddle-box.png in Resources */,
 				B36C04EB1C12099500F4058D /* pinball.png in Resources */,
+				B332DBD81C20A54000DC9A13 /* layout.plist in Resources */,
 				B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */,
 				B36C04D51C12092F00F4058D /* Main.storyboard in Resources */,
 				B36C04E91C12099500F4058D /* target.png in Resources */,
@@ -180,9 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36C04F11C12102400F4058D /* PlungerNode.swift in Sources */,
+				B332DBD61C209DFA00DC9A13 /* TargetNode.swift in Sources */,
 				B36C04D01C12092F00F4058D /* GameScene.swift in Sources */,
 				B332DBD21C208F0600DC9A13 /* PaddleNode.swift in Sources */,
 				B36C04D21C12092F00F4058D /* GameViewController.swift in Sources */,
+				B332DBD41C209D2400DC9A13 /* BumperNode.swift in Sources */,
 				B36C04EE1C120EF000F4058D /* PinballNode.swift in Sources */,
 				B36C04F51C13F34600F4058D /* TableNode.swift in Sources */,
 				B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */,

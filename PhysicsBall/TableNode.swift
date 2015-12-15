@@ -57,4 +57,38 @@ class TableNode: SKNode {
         self.position = CGPoint(x: 0, y: 0-cameraY)
     }
 
+    func loadLayoutNamed(name : String) {
+        guard let layoutPath = NSBundle.mainBundle().URLForResource(name, withExtension: "plist") else {
+            return
+        }
+        guard let layout = NSDictionary(contentsOfURL: layoutPath) else {
+            return
+        }
+
+        if let bumpers = layout["bumpers"] as? [[String : Int]] {
+            for bumperConfig in bumpers {
+                let size = CGSize(width: bumperConfig["width"]!, height: bumperConfig["height"]!)
+                let position = CGPoint(x: bumperConfig["x"]!, y: bumperConfig["y"]!)
+
+                let bumper = BumperNode.bumperWith(size)
+                bumper.position = position
+                bumper.zRotation = CGFloat(bumperConfig["degrees"]!) * CGFloat(M_PI) / CGFloat(180)
+                self.addChild(bumper)
+            }
+        }
+
+        if let targets = layout["targets"] as? [[String : Int]] {
+            for targetConfig in targets {
+                let radius = CGFloat(targetConfig["radius"]!)
+                let position = CGPoint(x: targetConfig["x"]!, y: targetConfig["y"]!)
+                let target = TargetNode.targetWith(radius)
+                target.position = position
+                target.pointValue = targetConfig["pointValue"]!
+
+                self.addChild(target)
+            }
+        }
+
+    }
+
 }
