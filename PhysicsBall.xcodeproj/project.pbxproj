@@ -19,6 +19,12 @@
 		B332DBE61C20CE0A00DC9A13 /* target1.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE31C20CE0A00DC9A13 /* target1.aif */; };
 		B332DBE71C20CE0A00DC9A13 /* target2.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE41C20CE0A00DC9A13 /* target2.aif */; };
 		B332DBE81C20CE0A00DC9A13 /* target3.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE51C20CE0A00DC9A13 /* target3.aif */; };
+		B332DBEA1C20D8AA00DC9A13 /* PullHintNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBE91C20D8AA00DC9A13 /* PullHintNode.swift */; };
+		B332DBF01C20D95600DC9A13 /* pull-hint-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DBEB1C20D95600DC9A13 /* pull-hint-0.png */; };
+		B332DBF11C20D95600DC9A13 /* pull-hint-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DBEC1C20D95600DC9A13 /* pull-hint-1.png */; };
+		B332DBF21C20D95600DC9A13 /* pull-hint-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DBED1C20D95600DC9A13 /* pull-hint-2.png */; };
+		B332DBF31C20D95600DC9A13 /* pull-hint-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DBEE1C20D95600DC9A13 /* pull-hint-3.png */; };
+		B332DBF41C20D95600DC9A13 /* pull-hint-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DBEF1C20D95600DC9A13 /* pull-hint-4.png */; };
 		B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CB1C12092F00F4058D /* AppDelegate.swift */; };
 		B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B36C04CD1C12092F00F4058D /* GameScene.sks */; };
 		B36C04D01C12092F00F4058D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CF1C12092F00F4058D /* GameScene.swift */; };
@@ -50,6 +56,12 @@
 		B332DBE31C20CE0A00DC9A13 /* target1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target1.aif; sourceTree = "<group>"; };
 		B332DBE41C20CE0A00DC9A13 /* target2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target2.aif; sourceTree = "<group>"; };
 		B332DBE51C20CE0A00DC9A13 /* target3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target3.aif; sourceTree = "<group>"; };
+		B332DBE91C20D8AA00DC9A13 /* PullHintNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullHintNode.swift; sourceTree = "<group>"; };
+		B332DBEB1C20D95600DC9A13 /* pull-hint-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-0.png"; sourceTree = "<group>"; };
+		B332DBEC1C20D95600DC9A13 /* pull-hint-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-1.png"; sourceTree = "<group>"; };
+		B332DBED1C20D95600DC9A13 /* pull-hint-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-2.png"; sourceTree = "<group>"; };
+		B332DBEE1C20D95600DC9A13 /* pull-hint-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-3.png"; sourceTree = "<group>"; };
+		B332DBEF1C20D95600DC9A13 /* pull-hint-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-hint-4.png"; sourceTree = "<group>"; };
 		B36C04C81C12092F00F4058D /* PhysicsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36C04CB1C12092F00F4058D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36C04CD1C12092F00F4058D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -100,6 +112,11 @@
 		B36C04CA1C12092F00F4058D /* PhysicsBall */ = {
 			isa = PBXGroup;
 			children = (
+				B332DBEB1C20D95600DC9A13 /* pull-hint-0.png */,
+				B332DBEC1C20D95600DC9A13 /* pull-hint-1.png */,
+				B332DBED1C20D95600DC9A13 /* pull-hint-2.png */,
+				B332DBEE1C20D95600DC9A13 /* pull-hint-3.png */,
+				B332DBEF1C20D95600DC9A13 /* pull-hint-4.png */,
 				B332DBD31C209D2400DC9A13 /* BumperNode.swift */,
 				B332DBD11C208F0600DC9A13 /* PaddleNode.swift */,
 				B36C04ED1C120EF000F4058D /* PinballNode.swift */,
@@ -129,6 +146,7 @@
 				B36C04D81C12092F00F4058D /* LaunchScreen.storyboard */,
 				B36C04DB1C12092F00F4058D /* Info.plist */,
 				B332DBDB1C20B4A800DC9A13 /* CategoriesMask.swift */,
+				B332DBE91C20D8AA00DC9A13 /* PullHintNode.swift */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -196,18 +214,23 @@
 				B36C04EA1C12099500F4058D /* bumper.png in Resources */,
 				B332DBE11C20CDFF00DC9A13 /* bump2.aif in Resources */,
 				B332DBE71C20CE0A00DC9A13 /* target2.aif in Resources */,
+				B332DBF11C20D95600DC9A13 /* pull-hint-1.png in Resources */,
 				B332DBE61C20CE0A00DC9A13 /* target1.aif in Resources */,
 				B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */,
 				B36C04DA1C12092F00F4058D /* LaunchScreen.storyboard in Resources */,
 				B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */,
+				B332DBF01C20D95600DC9A13 /* pull-hint-0.png in Resources */,
 				B36C04E71C12099500F4058D /* paddle-box.png in Resources */,
 				B36C04EB1C12099500F4058D /* pinball.png in Resources */,
 				B332DBD81C20A54000DC9A13 /* layout.plist in Resources */,
 				B332DBE21C20CDFF00DC9A13 /* bump3.aif in Resources */,
+				B332DBF31C20D95600DC9A13 /* pull-hint-3.png in Resources */,
 				B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */,
+				B332DBF41C20D95600DC9A13 /* pull-hint-4.png in Resources */,
 				B332DBE01C20CDFF00DC9A13 /* bump1.aif in Resources */,
 				B36C04D51C12092F00F4058D /* Main.storyboard in Resources */,
 				B36C04E91C12099500F4058D /* target.png in Resources */,
+				B332DBF21C20D95600DC9A13 /* pull-hint-2.png in Resources */,
 				B36C04E81C12099500F4058D /* plunger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +249,7 @@
 				B332DBD21C208F0600DC9A13 /* PaddleNode.swift in Sources */,
 				B36C04D21C12092F00F4058D /* GameViewController.swift in Sources */,
 				B332DBD41C209D2400DC9A13 /* BumperNode.swift in Sources */,
+				B332DBEA1C20D8AA00DC9A13 /* PullHintNode.swift in Sources */,
 				B36C04EE1C120EF000F4058D /* PinballNode.swift in Sources */,
 				B36C04F51C13F34600F4058D /* TableNode.swift in Sources */,
 				B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */,

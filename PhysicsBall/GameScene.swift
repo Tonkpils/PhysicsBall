@@ -71,6 +71,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
+        let ball = self.childNodeWithName("//ball") as! PinballNode
+        let plunger = self.childNodeWithName("//plunger") as! PlungerNode
+        let hint = self.childNodeWithName("//pullHint") as! PullHintNode
+        if plunger.isInContactWithBall(ball) {
+            hint.showHint()
+        } else {
+            hint.hideHint()
+        }
+
+
         if (self.leftPaddleTouch != nil) {
             let leftPaddle = self.childNodeWithName("//leftPaddle") as! PaddleNode
             leftPaddle.flip()
@@ -108,6 +118,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         plunger.name = "plunger"
         plunger.position = CGPoint(x: self.size.width - plunger.size!.width/2 - 4, y: plunger.size!.height / 2)
         table.addChild(plunger)
+
+        let pullHint = PullHintNode.pullHint()
+        pullHint.name = "pullHint"
+        pullHint.position = CGPoint(x: plunger.position.x, y: plunger.position.y + plunger.size!.height + 30)
+        pullHint.hideHint()
+        table.addChild(pullHint)
 
         let ball = PinballNode.ball()
         ball.name = "ball"
