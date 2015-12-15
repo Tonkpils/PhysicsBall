@@ -11,6 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
 
     weak var plungerTouch : UITouch?
+    weak var leftPaddleTouch : UITouch?
+    weak var rightPaddleTouch : UITouch?
 
     override func didMoveToView(view: SKView) {
         self.setupScene()
@@ -43,6 +45,16 @@ class GameScene: SKScene {
             }
             self.plungerTouch = touch
             plunger.grabWithTouch(touch, ball: ball, inWorld: self.physicsWorld)
+        } else {
+            for touch in touches {
+                let pos = touch.locationInNode(self)
+                if pos.x < self.size.width / 2 {
+                    self.leftPaddleTouch = touch
+                } else {
+                    self.rightPaddleTouch = touch
+                }
+
+            }
         }
 
     }
@@ -56,7 +68,15 @@ class GameScene: SKScene {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        if (self.leftPaddleTouch != nil) {
+            let leftPaddle = self.childNodeWithName("//leftPaddle") as! PaddleNode
+            leftPaddle.flip()
+        }
+
+        if (self.rightPaddleTouch != nil) {
+            let rightPaddle = self.childNodeWithName("//rightPaddle") as! PaddleNode
+            rightPaddle.flip()
+        }
     }
 
     func setupScene() {

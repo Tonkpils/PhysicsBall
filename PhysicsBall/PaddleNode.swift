@@ -74,4 +74,14 @@ class PaddleNode: SKNode {
 
         scene.physicsWorld.addJoint(pin)
     }
+
+    func flip() {
+        let bar = self.childNodeWithName("bar")
+        var torque : CGFloat = 3
+        if self.paddleSide! == .Right {
+            torque *= -1
+        }
+
+        bar?.physicsBody?.applyTorque(torque)
+    }
 }
