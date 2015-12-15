@@ -113,5 +113,11 @@ class GameScene: SKScene {
         rightPaddle.createPinJointInWorld()
 
         table.loadLayoutNamed("layout")
+
+        let hud = HUDNode.hud()
+        hud.name = "hud"
+        hud.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        self.addChild(hud)
+        hud.layoutForScene()
     }
 }
