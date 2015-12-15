@@ -40,4 +40,21 @@ class TableNode: SKNode {
         return table
     }
 
+    func followPositionOfBall(ball : PinballNode) {
+        let frame = self.calculateAccumulatedFrame()
+        let sceneHeight : CGFloat = self.scene!.size.height
+
+        var cameraY : CGFloat = ball.position.y - sceneHeight / 2
+        let maxY : CGFloat = frame.size.height - sceneHeight
+        let minY : CGFloat = 0
+
+        if cameraY < minY {
+            cameraY = minY
+        } else if cameraY > maxY {
+            cameraY = maxY
+        }
+
+        self.position = CGPoint(x: 0, y: 0-cameraY)
+    }
+
 }

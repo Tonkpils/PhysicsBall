@@ -17,9 +17,19 @@ class GameScene: SKScene {
     }
 
     override func didSimulatePhysics() {
+        let table = self.childNodeWithName("table") as! TableNode
+        let ball = table.childNodeWithName("ball") as! PinballNode
+        let plunger = table.childNodeWithName("plunger") as! PlungerNode
         if let plungerTouch = self.plungerTouch {
-            let plunger = self.childNodeWithName("//plunger") as! PlungerNode
             plunger.translateToTouch(plungerTouch)
+        }
+
+        table.followPositionOfBall(ball)
+
+        if ball.position.y < -500 {
+            ball.position = CGPoint(x: plunger.position.x, y: plunger.position.y + plunger.size!.height)
+            ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            ball.physicsBody?.angularVelocity = 0
         }
     }
     
