@@ -153,6 +153,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let target = otherBody.node as! TargetNode
             self.addPoints(target.pointValue!)
         }
+
+
+        if [CollisionCategory.Bumper.rawValue, CollisionCategory.Target.rawValue].contains(otherBody.categoryBitMask) {
+            self.capPhysicsBody(ballBody, atSpeed: 1150)
+            self.flashNode(otherBody.node!)
+        }
     }
 
     func playRandomBumperSound() {
@@ -174,5 +180,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addPoints(points : Int) {
         let hud = self.childNodeWithName("hud") as! HUDNode
         hud.addPoints(points)
+    }
+
+    func capPhysicsBody(body : SKPhysicsBody, atSpeed maxSpeed : CGFloat) {
+        var speed = CGFloat(sqrt(pow(body.velocity.dx, 2) + pow(body.velocity.dy, 2)))
+
+        if speed > maxSpeed {
+            speed = maxSpeed
+            let angle = atan2(body.velocity.dy, body.velocity.dx)
+            let limitedVelocity = CGVector(dx: speed * cos(angle), dy: speed * sin(angle))
+            body.velocity = limitedVelocity
+        }
+    }
+
+    func flashNode(node : SKNode) {
+        let scaleUp = SKAction.scaleTo(1.1, duration: 0.05)
+        let scaleDown = SKAction.scaleTo(1, duration: 0.1)
+        let colorize = SKAction.colorizeWithColor(SKColor.redColor(), colorBlendFactor: 200, duration: 0)
+        let uncolorize = SKAction.colorizeWithColorBlendFactor(0, duration: 0)
+        let all = SKAction.sequence([colorize, scaleUp, scaleDown, uncolorize])
+
+        node.runAction(all)
     }
 }
