@@ -16,6 +16,8 @@ class TargetNode: SKSpriteNode {
         target.size = CGSize(width: radius*2, height: radius*2)
 
         target.physicsBody = SKPhysicsBody(circleOfRadius: radius)
+        target.physicsBody!.categoryBitMask = CollisionCategory.Target.rawValue
+        target.physicsBody!.contactTestBitMask = CollisionCategory.Ball.rawValue
         target.physicsBody!.dynamic = false
         target.physicsBody!.restitution = 2
 

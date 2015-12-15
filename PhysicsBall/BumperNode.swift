@@ -14,6 +14,8 @@ class BumperNode: SKSpriteNode {
         let bumper = BumperNode(imageNamed: "bumper.png")
         bumper.size = size
         bumper.physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        bumper.physicsBody!.categoryBitMask = CollisionCategory.Bumper.rawValue
+        bumper.physicsBody!.contactTestBitMask = CollisionCategory.Ball.rawValue
         bumper.physicsBody!.dynamic = false
         bumper.physicsBody!.restitution = 2
 

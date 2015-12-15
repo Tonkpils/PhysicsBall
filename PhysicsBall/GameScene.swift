@@ -8,11 +8,14 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
 
     weak var plungerTouch : UITouch?
     weak var leftPaddleTouch : UITouch?
     weak var rightPaddleTouch : UITouch?
+
+    var bumperSounds : [SKAction]?
+    var targetSounds : [SKAction]?
 
     override func didMoveToView(view: SKView) {
         self.setupScene()
@@ -82,6 +85,19 @@ class GameScene: SKScene {
     func setupScene() {
         backgroundColor = SKColor.whiteColor()
         physicsWorld.gravity = CGVector(dx: 0, dy: -3.8)
+        physicsWorld.contactDelegate = self
+
+        bumperSounds = [
+            SKAction.playSoundFileNamed("bump1.aif", waitForCompletion: false),
+            SKAction.playSoundFileNamed("bump2.aif", waitForCompletion: false),
+            SKAction.playSoundFileNamed("bump3.aif", waitForCompletion: false)
+        ]
+
+        targetSounds = [
+            SKAction.playSoundFileNamed("target1.aif", waitForCompletion: false),
+            SKAction.playSoundFileNamed("target2.aif", waitForCompletion: false),
+            SKAction.playSoundFileNamed("target3.aif", waitForCompletion: false)
+        ]
 
         let table = TableNode.table()
         table.name = "table"
@@ -119,5 +135,44 @@ class GameScene: SKScene {
         hud.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         self.addChild(hud)
         hud.layoutForScene()
+    }
+
+    func didBeginContact(contact: SKPhysicsContact) {
+        if contact.bodyA.categoryBitMask == CollisionCategory.Ball.rawValue {
+            self.ballBody(contact.bodyA, didContact: contact, withBody: contact.bodyB)
+        } else if contact.bodyB.categoryBitMask == CollisionCategory.Ball.rawValue {
+            self.ballBody(contact.bodyB, didContact: contact, withBody: contact.bodyA)
+        }
+    }
+
+    func ballBody(ballBody : SKPhysicsBody, didContact contact : SKPhysicsContact, withBody otherBody : SKPhysicsBody) {
+        if otherBody.categoryBitMask == CollisionCategory.Bumper.rawValue {
+            self.playRandomBumperSound()
+        } else if otherBody.categoryBitMask == CollisionCategory.Target.rawValue {
+            self.playRandomTargetSound()
+            let target = otherBody.node as! TargetNode
+            self.addPoints(target.pointValue!)
+        }
+    }
+
+    func playRandomBumperSound() {
+        let soundCount = bumperSounds!.count
+        let randomSoundIndex = arc4random_uniform(UInt32(soundCount))
+        let sound = bumperSounds![Int(randomSoundIndex)]
+
+        self.runAction(sound)
+    }
+
+    func playRandomTargetSound() {
+        let soundCount = targetSounds!.count
+        let randomSoundIndex = arc4random_uniform(UInt32(soundCount))
+        let sound = targetSounds![Int(randomSoundIndex)]
+
+        self.runAction(sound)
+    }
+
+    func addPoints(points : Int) {
+        let hud = self.childNodeWithName("hud") as! HUDNode
+        hud.addPoints(points)
     }
 }

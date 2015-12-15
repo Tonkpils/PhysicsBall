@@ -12,6 +12,13 @@
 		B332DBD61C209DFA00DC9A13 /* TargetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBD51C209DFA00DC9A13 /* TargetNode.swift */; };
 		B332DBD81C20A54000DC9A13 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = B332DBD71C20A54000DC9A13 /* layout.plist */; };
 		B332DBDA1C20AF6800DC9A13 /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBD91C20AF6800DC9A13 /* HUDNode.swift */; };
+		B332DBDC1C20B4A800DC9A13 /* CategoriesMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBDB1C20B4A800DC9A13 /* CategoriesMask.swift */; };
+		B332DBE01C20CDFF00DC9A13 /* bump1.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBDD1C20CDFF00DC9A13 /* bump1.aif */; };
+		B332DBE11C20CDFF00DC9A13 /* bump2.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBDE1C20CDFF00DC9A13 /* bump2.aif */; };
+		B332DBE21C20CDFF00DC9A13 /* bump3.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBDF1C20CDFF00DC9A13 /* bump3.aif */; };
+		B332DBE61C20CE0A00DC9A13 /* target1.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE31C20CE0A00DC9A13 /* target1.aif */; };
+		B332DBE71C20CE0A00DC9A13 /* target2.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE41C20CE0A00DC9A13 /* target2.aif */; };
+		B332DBE81C20CE0A00DC9A13 /* target3.aif in Resources */ = {isa = PBXBuildFile; fileRef = B332DBE51C20CE0A00DC9A13 /* target3.aif */; };
 		B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CB1C12092F00F4058D /* AppDelegate.swift */; };
 		B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B36C04CD1C12092F00F4058D /* GameScene.sks */; };
 		B36C04D01C12092F00F4058D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CF1C12092F00F4058D /* GameScene.swift */; };
@@ -36,6 +43,13 @@
 		B332DBD51C209DFA00DC9A13 /* TargetNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetNode.swift; sourceTree = "<group>"; };
 		B332DBD71C20A54000DC9A13 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
 		B332DBD91C20AF6800DC9A13 /* HUDNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
+		B332DBDB1C20B4A800DC9A13 /* CategoriesMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesMask.swift; sourceTree = "<group>"; };
+		B332DBDD1C20CDFF00DC9A13 /* bump1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump1.aif; sourceTree = "<group>"; };
+		B332DBDE1C20CDFF00DC9A13 /* bump2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump2.aif; sourceTree = "<group>"; };
+		B332DBDF1C20CDFF00DC9A13 /* bump3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bump3.aif; sourceTree = "<group>"; };
+		B332DBE31C20CE0A00DC9A13 /* target1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target1.aif; sourceTree = "<group>"; };
+		B332DBE41C20CE0A00DC9A13 /* target2.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target2.aif; sourceTree = "<group>"; };
+		B332DBE51C20CE0A00DC9A13 /* target3.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = target3.aif; sourceTree = "<group>"; };
 		B36C04C81C12092F00F4058D /* PhysicsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36C04CB1C12092F00F4058D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36C04CD1C12092F00F4058D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -90,6 +104,13 @@
 				B332DBD11C208F0600DC9A13 /* PaddleNode.swift */,
 				B36C04ED1C120EF000F4058D /* PinballNode.swift */,
 				B36C04F01C12102400F4058D /* PlungerNode.swift */,
+				B332DBD91C20AF6800DC9A13 /* HUDNode.swift */,
+				B332DBE31C20CE0A00DC9A13 /* target1.aif */,
+				B332DBE41C20CE0A00DC9A13 /* target2.aif */,
+				B332DBE51C20CE0A00DC9A13 /* target3.aif */,
+				B332DBDD1C20CDFF00DC9A13 /* bump1.aif */,
+				B332DBDE1C20CDFF00DC9A13 /* bump2.aif */,
+				B332DBDF1C20CDFF00DC9A13 /* bump3.aif */,
 				B332DBD71C20A54000DC9A13 /* layout.plist */,
 				B36C04F41C13F34600F4058D /* TableNode.swift */,
 				B332DBD51C209DFA00DC9A13 /* TargetNode.swift */,
@@ -107,7 +128,7 @@
 				B36C04D61C12092F00F4058D /* Assets.xcassets */,
 				B36C04D81C12092F00F4058D /* LaunchScreen.storyboard */,
 				B36C04DB1C12092F00F4058D /* Info.plist */,
-				B332DBD91C20AF6800DC9A13 /* HUDNode.swift */,
+				B332DBDB1C20B4A800DC9A13 /* CategoriesMask.swift */,
 			);
 			path = PhysicsBall;
 			sourceTree = "<group>";
@@ -171,14 +192,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B332DBE81C20CE0A00DC9A13 /* target3.aif in Resources */,
 				B36C04EA1C12099500F4058D /* bumper.png in Resources */,
+				B332DBE11C20CDFF00DC9A13 /* bump2.aif in Resources */,
+				B332DBE71C20CE0A00DC9A13 /* target2.aif in Resources */,
+				B332DBE61C20CE0A00DC9A13 /* target1.aif in Resources */,
 				B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */,
 				B36C04DA1C12092F00F4058D /* LaunchScreen.storyboard in Resources */,
 				B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */,
 				B36C04E71C12099500F4058D /* paddle-box.png in Resources */,
 				B36C04EB1C12099500F4058D /* pinball.png in Resources */,
 				B332DBD81C20A54000DC9A13 /* layout.plist in Resources */,
+				B332DBE21C20CDFF00DC9A13 /* bump3.aif in Resources */,
 				B36C04EC1C12099500F4058D /* paddle-anchor.png in Resources */,
+				B332DBE01C20CDFF00DC9A13 /* bump1.aif in Resources */,
 				B36C04D51C12092F00F4058D /* Main.storyboard in Resources */,
 				B36C04E91C12099500F4058D /* target.png in Resources */,
 				B36C04E81C12099500F4058D /* plunger.png in Resources */,
@@ -195,6 +222,7 @@
 				B36C04F11C12102400F4058D /* PlungerNode.swift in Sources */,
 				B332DBD61C209DFA00DC9A13 /* TargetNode.swift in Sources */,
 				B36C04D01C12092F00F4058D /* GameScene.swift in Sources */,
+				B332DBDC1C20B4A800DC9A13 /* CategoriesMask.swift in Sources */,
 				B332DBD21C208F0600DC9A13 /* PaddleNode.swift in Sources */,
 				B36C04D21C12092F00F4058D /* GameViewController.swift in Sources */,
 				B332DBD41C209D2400DC9A13 /* BumperNode.swift in Sources */,
