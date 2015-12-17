@@ -175,6 +175,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.capPhysicsBody(ballBody, atSpeed: 1150)
             self.flashNode(otherBody.node!)
         }
+
+        if otherBody.categoryBitMask == CollisionCategory.BonusSpinner.rawValue {
+            let spinner = otherBody.node as! BonusSpinnerNode
+            spinner.spin()
+        }
     }
 
     func playRandomBumperSound() {
@@ -195,7 +200,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func addPoints(points : Int) {
         let hud = self.childNodeWithName("hud") as! HUDNode
-        hud.addPoints(points)
+        let spinner = self.childNodeWithName("//spinner") as! BonusSpinnerNode
+        if spinner.stillSpinning() {
+            hud.addPoints(points * 3)
+        } else {
+            hud.addPoints(points)
+        }
     }
 
     func capPhysicsBody(body : SKPhysicsBody, atSpeed maxSpeed : CGFloat) {

@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>bonusSpinner</key>
+	<dict>
+		<key>x</key>
+		<integer>210</integer>
+		<key>y</key>
+		<integer>640</integer>
+	</dict>
 	<key>bumpers</key>
 	<array>
 		<dict>

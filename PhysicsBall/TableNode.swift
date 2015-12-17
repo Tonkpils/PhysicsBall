@@ -89,6 +89,13 @@ class TableNode: SKNode {
             }
         }
 
+        if let spinnerConfig = layout["bonusSpinner"] as? [String : Int] {
+            let spinner = BonusSpinnerNode.bonusSpinnerNode()
+            spinner.name = "spinner"
+            spinner.position = CGPoint(x: spinnerConfig["x"]!, y: spinnerConfig["y"]!)
+            self.addChild(spinner)
+        }
+
     }
 
 }

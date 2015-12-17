@@ -12,4 +12,5 @@ struct CollisionCategory : OptionSetType {
     static let Ball  = CollisionCategory(rawValue: 1 << 0)
     static let Bumper = CollisionCategory(rawValue: 1 << 1)
     static let Target  = CollisionCategory(rawValue: 1 << 2)
+    static let BonusSpinner = CollisionCategory(rawValue: 1 << 3)
 }
