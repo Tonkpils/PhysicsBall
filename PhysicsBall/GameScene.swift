@@ -14,6 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     weak var leftPaddleTouch : UITouch?
     weak var rightPaddleTouch : UITouch?
 
+    var sparkleTemplate : SKEmitterNode?
+
     var bumperSounds : [SKAction]?
     var targetSounds : [SKAction]?
 
@@ -109,6 +111,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             SKAction.playSoundFileNamed("target3.aif", waitForCompletion: false)
         ]
 
+        self.sparkleTemplate = SKEmitterNode(fileNamed: "Spark")
+
         let table = TableNode.table()
         table.name = "table"
         table.position = CGPoint(x: 0, y: 0)
@@ -174,6 +178,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if [CollisionCategory.Bumper.rawValue, CollisionCategory.Target.rawValue].contains(otherBody.categoryBitMask) {
             self.capPhysicsBody(ballBody, atSpeed: 1150)
             self.flashNode(otherBody.node!)
+            self.playPuffForContact(contact, withVelocity: ballBody.velocity)
         }
 
         if otherBody.categoryBitMask == CollisionCategory.BonusSpinner.rawValue {
@@ -227,5 +232,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let all = SKAction.sequence([colorize, scaleUp, scaleDown, uncolorize])
 
         node.runAction(all)
+    }
+
+    func playPuffForContact(contact : SKPhysicsContact, withVelocity velocity : CGVector) {
+        guard let table = self.childNodeWithName("table") else {
+            return
+        }
+        let spark = self.sparkleTemplate?.copy() as! SKEmitterNode
+        spark.position = self.convertPoint(contact.contactPoint, toNode: table)
+        spark.xAcceleration = self.physicsWorld.gravity.dx
+        spark.yAcceleration = self.physicsWorld.gravity.dy
+        spark.emissionAngle = atan2(velocity.dy, velocity.dx)
+        spark.particleSpeed = contact.collisionImpulse
+        
+        spark.dieOutOn(0.05)
+
+        table.addChild(spark)
     }
 }
