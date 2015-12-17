@@ -24,6 +24,7 @@
 		B332DBFA1C2265C100DC9A13 /* layout.plist in Resources */ = {isa = PBXBuildFile; fileRef = B332DBF91C2265C100DC9A13 /* layout.plist */; };
 		B332DBFE1C226C7200DC9A13 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = B332DBFD1C226C7200DC9A13 /* Spark.sks */; };
 		B332DC001C226EFB00DC9A13 /* SKEmitterNode+DieOnDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332DBFF1C226EFB00DC9A13 /* SKEmitterNode+DieOnDuration.swift */; };
+		B332DC021C22715000DC9A13 /* table-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = B332DC011C22715000DC9A13 /* table-overlay.png */; };
 		B36C04CC1C12092F00F4058D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CB1C12092F00F4058D /* AppDelegate.swift */; };
 		B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B36C04CD1C12092F00F4058D /* GameScene.sks */; };
 		B36C04D01C12092F00F4058D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C04CF1C12092F00F4058D /* GameScene.swift */; };
@@ -54,6 +55,7 @@
 		B332DBF91C2265C100DC9A13 /* layout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = layout.plist; sourceTree = "<group>"; };
 		B332DBFD1C226C7200DC9A13 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
 		B332DBFF1C226EFB00DC9A13 /* SKEmitterNode+DieOnDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKEmitterNode+DieOnDuration.swift"; sourceTree = "<group>"; };
+		B332DC011C22715000DC9A13 /* table-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table-overlay.png"; sourceTree = "<group>"; };
 		B36C04C81C12092F00F4058D /* PhysicsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36C04CB1C12092F00F4058D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36C04CD1C12092F00F4058D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B332DBDE1C20CDFF00DC9A13 /* bump2.aif */,
 				B332DBDF1C20CDFF00DC9A13 /* bump3.aif */,
 				B332DBF91C2265C100DC9A13 /* layout.plist */,
+				B332DC011C22715000DC9A13 /* table-overlay.png */,
 				B36C04F41C13F34600F4058D /* TableNode.swift */,
 				B332DBD51C209DFA00DC9A13 /* TargetNode.swift */,
 				B36C04CB1C12092F00F4058D /* AppDelegate.swift */,
@@ -196,6 +199,7 @@
 				B332DBE61C20CE0A00DC9A13 /* target1.aif in Resources */,
 				B36C04CE1C12092F00F4058D /* GameScene.sks in Resources */,
 				B36C04DA1C12092F00F4058D /* LaunchScreen.storyboard in Resources */,
+				B332DC021C22715000DC9A13 /* table-overlay.png in Resources */,
 				B36C04D71C12092F00F4058D /* Assets.xcassets in Resources */,
 				B332DBE21C20CDFF00DC9A13 /* bump3.aif in Resources */,
 				B332DBFA1C2265C100DC9A13 /* layout.plist in Resources */,

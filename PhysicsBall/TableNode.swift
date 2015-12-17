@@ -37,6 +37,13 @@ class TableNode: SKNode {
 
         bounds.physicsBody = SKPhysicsBody(edgeChainFromPath: bezierPath.CGPath)
 
+        let overlay = SKSpriteNode(imageNamed: "table-overlay")
+        overlay.size = CGSize(width: 320, height: 1246)
+        overlay.anchorPoint = CGPoint(x: 0, y: 0)
+        overlay.position = CGPoint(x: 0, y: 0)
+        overlay.zPosition = 50
+        table.addChild(overlay)
+
         return table
     }
 

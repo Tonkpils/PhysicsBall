@@ -152,6 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         let hud = HUDNode.hud()
         hud.name = "hud"
+        hud.zPosition = 100
         hud.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         self.addChild(hud)
         hud.layoutForScene()
